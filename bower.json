@@ -1,0 +1,22 @@
+{
+  "name": "medicine",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Archi"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "install": "^1.0.4",
+    "normalize-css": "^5.0.0"
+  }
+}

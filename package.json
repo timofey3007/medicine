@@ -1,0 +1,41 @@
+{
+  "name": "medicine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/timofey3007/medicine.git"
+  },
+  "author": "Archi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timofey3007/medicine/issues"
+  },
+  "homepage": "https://github.com/timofey3007/medicine#readme",
+  "devDependencies": {
+    "bower": "^1.8.0",
+    "browser-sync": "^2.18.8",
+    "del": "^2.2.2",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-bower": "0.0.13",
+    "gulp-concat": "^2.6.1",
+    "gulp-css-globbing": "^0.1.9",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-if": "^2.0.2",
+    "gulp-jsvalidate": "^3.0.0",
+    "gulp-modify-css-urls": "^0.2.2",
+    "gulp-newer": "^1.3.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-remember": "^0.3.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglifyjs": "^0.6.2",
+    "gulp.spritesmith": "^6.3.0"
+  }
+}
