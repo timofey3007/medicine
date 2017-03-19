@@ -94,17 +94,23 @@ gulp.task('setLibraries', function(callback){
     gulp.src([// забираем css библиотеки, которые будем использовать
         config.bowerDir + '/normalize-css/normalize.css',
         config.bowerDir + '/bootstrap/dist/css/bootstrap.min.css',
+        config.bowerDir + '/font-awesome/css/font-awesome.css',
         'app/style/sprite.css'
     ]).pipe(concat('libs.min.css'))
         .pipe(cssnano())
         .pipe(gulp.dest('dist/css/'));
 
+    gulp.src([// забираем fonts, которые будем использовать
+        config.bowerDir + '/font-awesome/fonts/*'
+    ], {since: gulp.lastRun('setLibraries')})
+        .pipe(gulp.dest('dist/fonts'));
+
     callback();
 });
 
 gulp.task('build', gulp.series(
-    'clean',
-    'sprite',
+    //'clean',
+    //'sprite',
     'setLibraries',
     gulp.parallel('styles', 'assets', 'js'))
 );
