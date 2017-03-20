@@ -5,6 +5,7 @@ const sass = require('gulp-sass');
 const jsvalidate = require('gulp-jsvalidate');
 const concat = require('gulp-concat');
 const rename = require('gulp-rename');
+const imagemin = require('gulp-imagemin');
 const spritesmith = require('gulp.spritesmith');
 const modifyCssUrls = require('gulp-modify-css-urls');
 const uglifyjs = require('gulp-uglifyjs');
@@ -19,7 +20,8 @@ const newer = require('gulp-newer');// проверяет файлы и не п�
 
 var needBuild = process.env.NODE_ENV == 'build',
     config = {
-        bowerDir: './bower_components'
+        bowerDir: './bower_components',
+        libsDir : './app/libs'
     };
 
 gulp.task('styles', function(){
@@ -37,10 +39,17 @@ gulp.task('styles', function(){
         .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('assets', function(){
-    return gulp.src("app/assets/**/*.*", {since: gulp.lastRun('assets')})
+gulp.task('assets', function(callback){
+    gulp.src("app/assets/*.*", {since: gulp.lastRun('assets')})
         .pipe(newer('dist'))
         .pipe(gulp.dest('dist'));
+
+    gulp.src("app/assets/img/*.*", {since: gulp.lastRun('assets')})
+        .pipe(newer('dist/img'))
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/img'));
+
+    callback();
 });
 
 gulp.task('js', function(){
@@ -70,7 +79,9 @@ gulp.task('sprite', function(callback) {
                 padding: 10
             }));
 
-    spriteData.img.pipe(gulp.dest('dist/img/')); // путь, куда сохраняем картинку
+    spriteData.img
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/img/')); // путь, куда сохраняем картинку
     spriteData.css
         .pipe(modifyCssUrls({
             modify: function (url, filePath) {
@@ -85,8 +96,11 @@ gulp.task('sprite', function(callback) {
 gulp.task('setLibraries', function(callback){
 
     gulp.src([ // забираем js библиотеки, которые будем использовать
-        config.bowerDir + '/jquery/dist/jquery.min.js',
-        config.bowerDir +  '/bootstrap/dist/js/bootstrap.min.js'
+        config.bowerDir + '/jquery/dist/jquery.js',
+        config.bowerDir +  '/bootstrap/dist/js/bootstrap.min.js',
+        config.libsDir +  '/parallaxslider/jquery.velocity.min.js',
+        config.libsDir +  '/parallaxslider/jquery.touchSwipe.min.js',
+        config.libsDir +  '/parallaxslider/parallaxslider.js'
     ]).pipe(concat('libs.min.js'))
         .pipe(uglifyjs())
         .pipe(gulp.dest('dist/js/'));

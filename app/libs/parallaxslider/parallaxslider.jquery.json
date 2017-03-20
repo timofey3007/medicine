@@ -1,0 +1,27 @@
+{
+  "name": "parallaxslider",
+  "title": "Parallax Slider",
+  "description": "Parallax Slider incorporates a parallax scrolling effect where each slide and its contents glide into view at different speeds, creating a captivating visual experience.",
+  "keywords": ["slider", "slideshow", "parallax"],
+  "version": "1.0.1",
+  "author": {
+    "name": "Dynamic Drive",
+    "email" : "ddrivehelp@gmail.com",
+		"url": "http://www.dynamicdrive.com"
+  },
+  "licenses": [
+    {
+      "type": "Freeware",
+      "url": "http://www.dynamicdrive.com/notice.htm"
+    }
+  ],
+  "dependencies": {
+    "jquery": ">=1.10",
+    "jquery.velocity.min.js": ">=0.2.1",
+    "jquery.touchSwipe.min.js": ">=1.6.6"		
+  },
+  "homepage": "http://www.dynamicdrive.com/dynamicindex17/parallaxslider/index.htm",
+  "docs": "http://www.dynamicdrive.com/dynamicindex17/parallaxslider/index.htm",
+  "demo": "http://www.dynamicdrive.com/dynamicindex17/parallaxslider/index.htm",
+  "download": "http://www.dynamicdrive.com/dynamicindex17/parallaxslider/index.htm"
+}

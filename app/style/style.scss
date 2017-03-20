@@ -1,22 +1,26 @@
 $textColor: #fff;
+$buttonDefaultBgColor: #fff;
+$buttonDefaultColor: #010000;
 $buttonColor: #66dcae;
-$hoverColor: #66dcae;
+$hoverColor: #a1d1d9;
 
-$lgFong: 3vm;
-$bigFont: 2vm;
-$mdFont: 1vm;
-$smFont: 0.7vm;
+$lgFong: 3vmax;
+$bigFont: 2vmax;
+$mdFont: 1vmax;
+$smFont: 0.7vmax;
 
-
-header {
-    height: 300px;
-}
 
 body * {
     font-family: "Poppins", sans-serif;
 }
 
+a {
+    color: $textColor;
+}
 
+a:hover {
+    color: $hoverColor;
+}
 
 
 /* --- helper classes --- */
@@ -33,6 +37,10 @@ body * {
     margin-bottom: 30px;
 }
 
+.m_l_30 {
+    margin-left: 30px;
+}
+
 .p_t_15 {
     padding-top: 15px;
 }
@@ -47,16 +55,16 @@ body * {
 }
 
 .lg_f {
-    font-size: 3vmax;
+    font-size: $lgFong;
 }
 .big_f{
-    font-size: 2vmax;
+    font-size: $bigFont;
 }
 .md_f {
-    font-size: 1vmax;
+    font-size: $mdFont;
 }
 .sm_f {
-    font-size: 0.7vmax;
+    font-size: $smFont;
 }
 
 .pos_under {
@@ -67,7 +75,142 @@ body * {
     display: inline-block;
     margin-right: 5px;
 }
+.flex_v_center {
+    display: flex;
+    align-items: center;
+}
+
+.btn_default {
+    display: flex;
+    align-items: center;
+    background-color: $buttonDefaultBgColor;
+    color: $buttonDefaultColor;
+    border-radius: 30px;
+    border: none;
+    padding: 10px 30px;
+
+    transition: 0.4s all;
+}
+
+.btn_default:hover {
+    background-color: $hoverColor;
+}
 /* --- end helper classes --- */
+
+/* --- parallax slider --- */
+#myparallaxslider{ /* CSS for specific carousel container called #myparallaxslider. */
+    width:100%;
+    height:450px;
+}
+
+/* ######### Shared CSS for various parts of slider (in the event of multiple sliders) ######### */
+
+div.parallaxslider{ /* shared CSS for main carousel container */
+
+}
+
+div.parallaxslider.load:before{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: '\f0e2';
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    font-size: 36px;
+    animation: rotating 2s linear infinite;
+}
+
+div.parallaxslider .navbutton{ /* CSS for the nav buttons */
+    font-size: $bigFont;
+    color: $textColor;
+    opacity: 0.7;
+    transition: 0.4s opacity;
+}
+
+div.parallaxslider .navbutton:hover {
+    opacity: 1;
+}
+
+div.parallaxslider .right_slide_img {
+    background-size: 35%;
+    background-position: 90% center;
+    background-repeat: no-repeat;
+}
+
+div.parallaxslider .left_text_block {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 35%;
+    transform: translateY(-50%);
+}
+
+div.parallaxslider *{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+div.parallaxslider div.slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+div.parallaxslider div.slide div.bgoverlay{ /* CSS for each image's DIV container within main container */
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: black;
+    background-position: center center; /* center image within carousel */
+    background-repeat: no-repeat;
+    background-size: cover; /* CSS3 property to scale image within container? "cover" or "contain" */
+}
+
+div.parallaxslider div.selectedslide{ /* CSS for currently selected slide */
+}
+
+div.parallaxslider div.slide div.desc{ /* DIV that contains the textual description inside .slide */
+    position: absolute;
+    color: white;
+    padding: 8px;
+    text-shadow: 0 -1px 1px #8a8a8a; /* CSS3 text shadow */
+    z-index:5;
+    pointer-events: none; /* keep this property intact. Disable pointer events on desc divs themselves */
+}
+
+div.parallaxslider div.slide div.desc *{
+    pointer-events: auto; /* keep this property intact. Enable pointer events on individual elements within desc divs, such as links */
+}
+
+div.parallaxslider div.selectedslide div.desc{ /* CSS for currently selected slide's desc div */
+}
+
+
+div.parallaxslider div.slide div.desc a{
+    text-decoration:none;
+}
+
+div.parallaxslider .slider_block_title {
+    font-size: $bigFont;
+    line-height: 36px;
+    color: $textColor;
+}
+div.parallaxslider .slider_block_text {
+    font-size: $mdFont;
+    color: $textColor;
+    font-style: italic;
+}
+/* --- end parallax slider --- */
 
 /* --- header styles --- */
 .logo {
@@ -154,6 +297,18 @@ body * {
     /*border: 1px solid $textColor;*/
 }
 
+.slide_btn {
+    background-color: rgba(255,255,255,.4);
+    color: $textColor;
+    text-transform: uppercase;
+    border-radius: 15px;
+    padding: 2px 15px 0;
+    font-size: $smFont;
+}
+
+.slider_block_title {
+    color: $textColor;
+}
 /*.main_menu > .menu_item:first-child {
     padding-left: 0;
 }
@@ -164,3 +319,39 @@ body * {
 .menu_item:hover .sub_menu{
     display: block;
 }
+/* --- end header styles --- */
+
+/* --- animation --- */
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -ms-transform: rotate(-360deg);
+        -moz-transform: rotate(-360deg);
+        -webkit-transform: rotate(-360deg);
+        -o-transform: rotate(-360deg);
+        transform: rotate(-360deg);
+    }
+}
+@keyframes rotating {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -ms-transform: rotate(-360deg);
+        -moz-transform: rotate(-360deg);
+        -webkit-transform: rotate(-360deg);
+        -o-transform: rotate(-360deg);
+        transform: rotate(-360deg);
+    }
+}
+/* --- end animation --- */
