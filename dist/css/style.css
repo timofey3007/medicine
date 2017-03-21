@@ -1,6 +1,9 @@
 body * {
   font-family: "Poppins", sans-serif; }
 
+* {
+  font-size: 1vmax; }
+
 a {
   color: #fff; }
 
@@ -8,6 +11,10 @@ a:hover {
   color: #a1d1d9; }
 
 /* --- helper classes --- */
+.spec_row {
+  margin-right: -95px;
+  margin-left: -95px; }
+
 .m_t_15 {
   margin-top: 15px; }
 
@@ -20,8 +27,14 @@ a:hover {
 .m_b_30 {
   margin-bottom: 30px; }
 
+.m_r_15 {
+  margin-right: 15px; }
+
 .m_l_30 {
   margin-left: 30px; }
+
+.m_l_45 {
+  margin-left: 45px; }
 
 .p_t_15 {
   padding-top: 15px; }
@@ -35,25 +48,24 @@ a:hover {
 .p_b_30 {
   padding-bottom: 30px; }
 
-.lg_f {
-  font-size: 3vmax; }
-
-.big_f {
-  font-size: 2vmax; }
-
-.md_f {
-  font-size: 1vmax; }
-
-.sm_f {
-  font-size: 0.7vmax; }
-
+/*body .lg_f {
+    font-size: $lgFong;
+}
+body .big_f{
+    font-size: $bigFont;
+}
+body .md_f {
+    font-size: $mdFont;
+}
+body .sm_f {
+    font-size: $smFont;
+}*/
 .pos_under {
   position: relative;
-  z-index: 5; }
+  z-index: 100; }
 
 .m_icon {
-  display: inline-block;
-  margin-right: 5px; }
+  display: inline-block; }
 
 .flex_v_center {
   display: -webkit-box;
@@ -74,19 +86,20 @@ a:hover {
   color: #010000;
   border-radius: 30px;
   border: none;
-  padding: 10px 30px;
+  padding: 20px 40px;
   -webkit-transition: 0.4s all;
   transition: 0.4s all; }
 
 .btn_default:hover {
-  background-color: #a1d1d9; }
+  background-color: #a1d1d9;
+  color: #010000; }
 
 /* --- end helper classes --- */
 /* --- parallax slider --- */
 #myparallaxslider {
   /* CSS for specific carousel container called #myparallaxslider. */
   width: 100%;
-  height: 450px; }
+  height: 600px; }
 
 /* ######### Shared CSS for various parts of slider (in the event of multiple sliders) ######### */
 div.parallaxslider {
@@ -109,7 +122,7 @@ div.parallaxslider.load:before {
 
 div.parallaxslider .navbutton {
   /* CSS for the nav buttons */
-  font-size: 2vmax;
+  font-size: 1.65vmax;
   color: #fff;
   opacity: 0.7;
   -webkit-transition: 0.4s opacity;
@@ -118,18 +131,30 @@ div.parallaxslider .navbutton {
 div.parallaxslider .navbutton:hover {
   opacity: 1; }
 
-div.parallaxslider .right_slide_img {
-  background-size: 35%;
-  background-position: 90% center;
+div.parallaxslider .right_slide_img,
+div.parallaxslider .left_slide_img {
+  background-size: 26%;
   background-repeat: no-repeat; }
 
-div.parallaxslider .left_text_block {
+div.parallaxslider .left_slide_img {
+  background-position: 16% center; }
+
+div.parallaxslider .right_slide_img {
+  background-position: 84% center; }
+
+div.parallaxslider .left_text_block,
+div.parallaxslider .right_text_block {
   position: absolute;
-  top: 50%;
-  left: 10%;
+  top: 46%;
   width: 35%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%); }
+
+div.parallaxslider .left_text_block {
+  left: 12%; }
+
+div.parallaxslider .right_text_block {
+  right: 12%; }
 
 div.parallaxslider * {
   box-sizing: border-box; }
@@ -182,14 +207,41 @@ div.parallaxslider div.slide div.desc a {
   text-decoration: none; }
 
 div.parallaxslider .slider_block_title {
-  font-size: 2vmax;
-  line-height: 36px;
+  font-size: 2.7vmax;
+  line-height: 3.5vmax;
   color: #fff; }
 
 div.parallaxslider .slider_block_text {
   font-size: 1vmax;
   color: #fff;
-  font-style: italic; }
+  font-style: italic;
+  line-height: 2vmax;
+  margin-bottom: 30px; }
+
+div.parallaxslider div.slide div.desc a.site_link {
+  text-decoration: underline; }
+
+div.parallaxslider .slider_navigator {
+  position: absolute;
+  z-index: 10;
+  bottom: 20px;
+  left: 11%;
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+div.parallaxslider .slider_navigator li {
+  display: inline-block;
+  margin-left: 10px;
+  cursor: pointer;
+  color: #fff;
+  opacity: 0.4;
+  -webkit-transition: 0.4s opacity;
+  transition: 0.4s opacity; }
+
+div.parallaxslider .slider_navigator li.active,
+div.parallaxslider .slider_navigator li:hover {
+  opacity: 1; }
 
 /* --- end parallax slider --- */
 /* --- header styles --- */
@@ -203,13 +255,16 @@ div.parallaxslider .slider_block_text {
 
 .logo_text {
   color: #fff;
-  font-weight: 300; }
+  font-weight: 300;
+  font-size: 1.65vmax; }
 
 .bg_logo_grad {
   position: relative;
   z-index: 1;
   background: -webkit-linear-gradient(57deg, #ee6363 17%, #ff8081 83%);
-  background: linear-gradient(33deg, #ee6363 17%, #ff8081 83%); }
+  background: linear-gradient(33deg, #ee6363 17%, #ff8081 83%);
+  padding-top: 50px;
+  padding-bottom: 140px; }
 
 .bg_logo_grad:before {
   position: absolute;
@@ -224,7 +279,8 @@ div.parallaxslider .slider_block_text {
   background: linear-gradient(193deg, #ffffff 29%, rgba(255, 255, 255, 0) 71%); }
 
 .top_menu {
-  margin-right: -10px; }
+  position: relative;
+  z-index: 100; }
 
 .top_menu ul {
   padding: 0;
@@ -235,7 +291,7 @@ div.parallaxslider .slider_block_text {
   position: relative;
   display: inline-block;
   color: #fff;
-  padding: 4px 15px;
+  padding: 4px 32px;
   -webkit-transition: 0.4s background-color;
   transition: 0.4s background-color; }
 
@@ -269,10 +325,7 @@ div.parallaxslider .slider_block_text {
   text-transform: uppercase;
   border-radius: 15px;
   padding: 2px 15px 0;
-  font-size: 0.7vmax; }
-
-.slider_block_title {
-  color: #fff; }
+  font-size: 1vmax; }
 
 /*.main_menu > .menu_item:first-child {
     padding-left: 0;

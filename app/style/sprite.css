@@ -1,1 +1,53 @@
-.icon-aid-kit{background-position:0 -67px;width:62px;height:47px}.icon-aid-kit,.icon-basket{background-image:url(../img/sprite.png)}.icon-basket{background-position:-162px 0;width:34px;height:39px}.icon-everyone{background-position:0 0;width:74px;height:57px}.icon-everyone,.icon-life{background-image:url(../img/sprite.png)}.icon-life{background-position:-72px -67px;width:58px;height:25px}.icon-logo{background-image:url(../img/sprite.png);background-position:-84px 0;width:68px;height:51px}
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+
+.icon-aid-kit {
+  background-image: url("../img/sprite.png");
+  background-position: -84px 0px;
+  width: 62px;
+  height: 47px;
+}
+
+.icon-basket {
+  background-image: url("../img/sprite.png");
+  background-position: 0px -111px;
+  width: 21px;
+  height: 26px;
+}
+
+.icon-everyone {
+  background-image: url("../img/sprite.png");
+  background-position: 0px 0px;
+  width: 74px;
+  height: 57px;
+}
+
+.icon-life {
+  background-image: url("../img/sprite.png");
+  background-position: -55px -67px;
+  width: 58px;
+  height: 25px;
+}
+
+.icon-logo {
+  background-image: url("../img/sprite.png");
+  background-position: 0px -67px;
+  width: 45px;
+  height: 34px;
+}

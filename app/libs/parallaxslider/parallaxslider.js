@@ -9,7 +9,7 @@
 
 function parallaxSlider(options){
 	var $=jQuery
-	this.setting={displaymode:{type:'auto', pause:2000, stoponclick:false, cycles:2, pauseonmouseover:true}, delaybtwdesc:500, activeslideclass:'selectedslide', orientation:'h', persist:true, slideduration:500} //default settings
+	this.setting={displaymode:{type:'auto', pause:2000, stoponclick:false, cycles:2, pauseonmouseover:true}, delaybtwdesc:500, activeslideclass:'selectedslide', orientation:'h', persist:true, slideduration:500, nav: true} //default settings
 	jQuery.extend(this.setting, options) //merge default settings with options
 	this.setting.displaymode.pause+=400+this.setting.slideduration // 400ms is default fade in time
 	this.curslide=(this.setting.persist)? parallaxSlider.routines.getCookie("slider-"+this.setting.wrapperid) : 0
@@ -20,12 +20,13 @@ function parallaxSlider(options){
 	options=null
 	var slideshow=this, setting=this.setting, preloadimages=[], max=0, imagesloaded=0
 	$(function(){ //on document.ready
-		slideshow.$wrapperdiv=$('#'+setting.wrapperid)
+		slideshow.$wrapperdiv=$('#'+setting.wrapperid);
+		slideshow.$nav = null;
 		var $bgoverlays = slideshow.$wrapperdiv.find('div.bgoverlay, div.slideImg').filter(function(i){
 			var $this = $(this)
 			return ($this.data('bgimage') || $this.css('backgroundImage')!='none')
 		})
-		var max = $bgoverlays.length
+		var max = $bgoverlays.length;
 		for (var i=0; i<$bgoverlays.length; i++){ // preload bg images inside div.bgoverlays
 			var $this = $bgoverlays.eq(i)
 			if ($this.data('bgimage')){
@@ -93,6 +94,7 @@ parallaxSlider.prototype={
 		var $nextdescs = $nextslide.data('$descs')
 		var $curslide = this.$imageslides.eq(this.curslide)
 		var $curdescs = $curslide.data('$descs')
+
 
 
 		$nextslide //show upcoming slide: [.75,.03,0,.97] is easing "function". See http://cubic-bezier.com
@@ -182,16 +184,44 @@ parallaxSlider.prototype={
 		/*var $controls =  $('<img class="navbutton" src="'+controlpaths[1]+'" data-dir="forth" style="position:absolute; z-index:5; cursor:pointer; ' + (orientation=='v'? 'bottom:8px; left:46%' : 'top:46%; right:8px;') + '" />'
 			+ '<img class="navbutton" src="'+controlpaths[0]+'" data-dir="back" style="position:absolute;z-index:5; cursor:pointer; ' + (orientation=='v'? 'top:8px; left:45%' : 'top:45%; left:8px;') + '" />'
 		)*/
-        var $controls =  $('<i class="navbutton '+controlpaths[1]+'" data-dir="forth" style="position:absolute; z-index:5; cursor:pointer; ' + (orientation=='v'? 'bottom:8px; left:46%' : 'top:46%; right:30px;') + '" ></i>'
-            + '<i class="navbutton '+controlpaths[0]+'" data-dir="back" style="position:absolute;z-index:5; cursor:pointer; ' + (orientation=='v'? 'top:8px; left:45%' : 'top:45%; left:30px;') + '" ></i>'
+        var $controls =  $('<i class="navbutton '+controlpaths[1]+'" data-dir="forth" style="position:absolute; z-index:5; cursor:pointer; ' + (orientation=='v'? 'bottom:8px; left:46%' : 'top:46%; right:50px;') + '" ></i>'
+            + '<i class="navbutton '+controlpaths[0]+'" data-dir="back" style="position:absolute;z-index:5; cursor:pointer; ' + (orientation=='v'? 'top:8px; left:45%' : 'top:45%; left:50px;') + '" ></i>'
         )
 		//.css({opacity:0.8})
 		.click(function(){
 			var keyword = this.getAttribute('data-dir')
 			setting.curslide = (keyword == "right")? (setting.curslide == setting.content.length-1? 0 : setting.curslide + 1)
 				: (setting.curslide == 0? setting.content.length-1 : setting.curslide - 1)
-			slideshow.navigate(keyword)
-		})
+			slideshow.navigate(keyword);
+
+			slideshow.checkCurNav(slideshow);// определеяем активную пагинацию
+		});
+
+		if ( setting.nav ) {
+			var nav = $("<ul>", {
+				class: "slider_navigator"
+			});
+
+			this.$imageslides.each(function(){
+				var obj = $(this),
+					li = $("<li>", {
+						html: '<i class="fa fa-circle" aria-hidden="true"></i>',
+						click: function() {
+							var el = $(this),
+								index = el.index(),
+								type = ( index > slideshow.curslide ) ? 'right' : 'left';
+
+							slideshow.slide(index, type);
+							slideshow.checkCurNav(slideshow);// определеяем активную пагинацию
+						}
+					});
+
+				nav.append(li);
+			});
+			this.$nav = nav;
+			this.$wrapperdiv.append(nav);
+		}
+
 		this.$controls = $controls.appendTo(this.$wrapperdiv)
 		this.positioncontrols(this.$controls)
 		if (setting.displaymode.type=="auto"){ //auto slide mode?
@@ -246,8 +276,13 @@ parallaxSlider.prototype={
 				slideshow.$controls.stop()
 			}
 		})
-	}
 
+		this.checkCurNav(slideshow);// определеяем активную пагинацию
+	},
+
+	checkCurNav: function(slide) {
+		slide.$nav.find("li").eq(this.curslide).addClass("active").siblings().removeClass("active");
+	}
 }
 
 parallaxSlider.routines={

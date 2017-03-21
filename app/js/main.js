@@ -10,5 +10,7 @@ $(document).ready(() => {
         orientation: 'h', //Valid values: "h" or "v"
         persist: true, //remember last viewed slide and recall within same session?
         slideduration: 1000 //transition duration (milliseconds)
-    })
+    });
+
+
 });

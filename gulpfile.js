@@ -73,6 +73,7 @@ gulp.task('clean', function(){
 gulp.task('sprite', function(callback) {
     var spriteData =
         gulp.src('app/forSprite/*.*') // путь, откуда берем картинки для спрайта
+            //.pipe(imagemin())
             .pipe(spritesmith({
                 imgName: 'sprite.png',
                 cssName: 'sprite.css',
@@ -80,7 +81,6 @@ gulp.task('sprite', function(callback) {
             }));
 
     spriteData.img
-        .pipe(imagemin())
         .pipe(gulp.dest('dist/img/')); // путь, куда сохраняем картинку
     spriteData.css
         .pipe(modifyCssUrls({
@@ -89,6 +89,15 @@ gulp.task('sprite', function(callback) {
             }
         }))
         .pipe(gulp.dest('app/style/')); // путь, куда сохраняем стили
+
+    callback();
+});
+
+gulp.task('createBootstrap', function(callback){
+    gulp.src(config.bowerDir + '/custom-bootstrap/style.scss')
+        .pipe(sass.sync())
+        .pipe(autoprefixer())
+        .pipe(gulp.dest(config.bowerDir + '/custom-bootstrap'));
 
     callback();
 });
@@ -107,7 +116,7 @@ gulp.task('setLibraries', function(callback){
 
     gulp.src([// забираем css библиотеки, которые будем использовать
         config.bowerDir + '/normalize-css/normalize.css',
-        config.bowerDir + '/bootstrap/dist/css/bootstrap.min.css',
+        config.bowerDir + '/custom-bootstrap/style.css',
         config.bowerDir + '/font-awesome/css/font-awesome.css',
         'app/style/sprite.css'
     ]).pipe(concat('libs.min.css'))
@@ -123,8 +132,9 @@ gulp.task('setLibraries', function(callback){
 });
 
 gulp.task('build', gulp.series(
-    //'clean',
-    //'sprite',
+    'clean',
+    'sprite',
+    'createBootstrap',
     'setLibraries',
     gulp.parallel('styles', 'assets', 'js'))
 );

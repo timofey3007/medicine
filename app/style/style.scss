@@ -4,14 +4,18 @@ $buttonDefaultColor: #010000;
 $buttonColor: #66dcae;
 $hoverColor: #a1d1d9;
 
-$lgFong: 3vmax;
-$bigFont: 2vmax;
+$lgFont: 2.7vmax;
+$bigFont: 1.65vmax;
 $mdFont: 1vmax;
 $smFont: 0.7vmax;
 
 
 body * {
     font-family: "Poppins", sans-serif;
+}
+
+* {
+    font-size: $mdFont;
 }
 
 a {
@@ -24,6 +28,10 @@ a:hover {
 
 
 /* --- helper classes --- */
+.spec_row {
+    margin-right: -95px;
+    margin-left: -95px;
+}
 .m_t_15 {
     margin-top: 15px;
 }
@@ -37,8 +45,15 @@ a:hover {
     margin-bottom: 30px;
 }
 
+.m_r_15 {
+    margin-right: 15px;
+}
+
 .m_l_30 {
     margin-left: 30px;
+}
+.m_l_45 {
+    margin-left: 45px;
 }
 
 .p_t_15 {
@@ -54,26 +69,25 @@ a:hover {
     padding-bottom: 30px;
 }
 
-.lg_f {
+/*body .lg_f {
     font-size: $lgFong;
 }
-.big_f{
+body .big_f{
     font-size: $bigFont;
 }
-.md_f {
+body .md_f {
     font-size: $mdFont;
 }
-.sm_f {
+body .sm_f {
     font-size: $smFont;
-}
+}*/
 
 .pos_under {
     position: relative;
-    z-index: 5;
+    z-index: 100;
 }
 .m_icon {
     display: inline-block;
-    margin-right: 5px;
 }
 .flex_v_center {
     display: flex;
@@ -87,20 +101,21 @@ a:hover {
     color: $buttonDefaultColor;
     border-radius: 30px;
     border: none;
-    padding: 10px 30px;
+    padding: 20px 40px;
 
     transition: 0.4s all;
 }
 
 .btn_default:hover {
     background-color: $hoverColor;
+    color: $buttonDefaultColor;
 }
 /* --- end helper classes --- */
 
 /* --- parallax slider --- */
 #myparallaxslider{ /* CSS for specific carousel container called #myparallaxslider. */
     width:100%;
-    height:450px;
+    height:600px;
 }
 
 /* ######### Shared CSS for various parts of slider (in the event of multiple sliders) ######### */
@@ -134,18 +149,30 @@ div.parallaxslider .navbutton:hover {
     opacity: 1;
 }
 
-div.parallaxslider .right_slide_img {
-    background-size: 35%;
-    background-position: 90% center;
+div.parallaxslider .right_slide_img,
+div.parallaxslider .left_slide_img {
+    background-size: 26%;
     background-repeat: no-repeat;
 }
+div.parallaxslider .left_slide_img {
+    background-position: 16% center;
+}
+div.parallaxslider .right_slide_img {
+    background-position: 84% center;
+}
 
-div.parallaxslider .left_text_block {
+div.parallaxslider .left_text_block,
+div.parallaxslider .right_text_block {
     position: absolute;
-    top: 50%;
-    left: 10%;
+    top: 46%;
     width: 35%;
     transform: translateY(-50%);
+}
+div.parallaxslider .left_text_block {
+    left: 12%;
+}
+div.parallaxslider .right_text_block {
+    right: 12%;
 }
 
 div.parallaxslider *{
@@ -201,14 +228,40 @@ div.parallaxslider div.slide div.desc a{
 }
 
 div.parallaxslider .slider_block_title {
-    font-size: $bigFont;
-    line-height: 36px;
+    font-size: $lgFont;
+    line-height: 3.5vmax;
     color: $textColor;
 }
 div.parallaxslider .slider_block_text {
     font-size: $mdFont;
     color: $textColor;
     font-style: italic;
+    line-height: 2vmax;
+    margin-bottom: 30px;
+}
+div.parallaxslider div.slide div.desc a.site_link {
+    text-decoration: underline;
+}
+div.parallaxslider .slider_navigator {
+    position: absolute;
+    z-index: 10;
+    bottom: 20px;
+    left: 11%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+div.parallaxslider .slider_navigator li {
+    display: inline-block;
+    margin-left: 10px;
+    cursor: pointer;
+    color: $textColor;
+    opacity: 0.4;
+    transition: 0.4s opacity;
+}
+div.parallaxslider .slider_navigator li.active,
+div.parallaxslider .slider_navigator li:hover {
+    opacity: 1;
 }
 /* --- end parallax slider --- */
 
@@ -220,6 +273,7 @@ div.parallaxslider .slider_block_text {
 .logo_text {
     color: $textColor;
     font-weight: 300;
+    font-size: $bigFont;
 }
 
 .bg_logo_grad {
@@ -231,6 +285,8 @@ div.parallaxslider .slider_block_text {
     background: -ms-linear-gradient(57deg, #ee6363 17%, #ff8081 83%);
     background: linear-gradient(33deg, #ee6363 17%, #ff8081 83%);
 
+    padding-top: 50px;
+    padding-bottom: 140px;
 }
 
 .bg_logo_grad:before {
@@ -250,7 +306,8 @@ div.parallaxslider .slider_block_text {
 }
 
 .top_menu {
-    margin-right: -10px;
+    position: relative;
+    z-index: 100;
 }
 
 .top_menu ul {
@@ -263,7 +320,7 @@ div.parallaxslider .slider_block_text {
     position: relative;
     display: inline-block;
     color: $textColor;
-    padding: 4px 15px;
+    padding: 4px 32px;
     transition: 0.4s background-color;
 }
 
@@ -303,12 +360,9 @@ div.parallaxslider .slider_block_text {
     text-transform: uppercase;
     border-radius: 15px;
     padding: 2px 15px 0;
-    font-size: $smFont;
+    font-size: $mdFont;
 }
 
-.slider_block_title {
-    color: $textColor;
-}
 /*.main_menu > .menu_item:first-child {
     padding-left: 0;
 }
