@@ -12,5 +12,5 @@ $(document).ready(() => {
         slideduration: 1000 //transition duration (milliseconds)
     });
 
-
+    var wow = new WOW().init();
 });

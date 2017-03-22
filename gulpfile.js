@@ -107,6 +107,7 @@ gulp.task('setLibraries', function(callback){
     gulp.src([ // забираем js библиотеки, которые будем использовать
         config.bowerDir + '/jquery/dist/jquery.js',
         config.bowerDir +  '/bootstrap/dist/js/bootstrap.min.js',
+        config.bowerDir +  '/wow/dist/wow.min.js',
         config.libsDir +  '/parallaxslider/jquery.velocity.min.js',
         config.libsDir +  '/parallaxslider/jquery.touchSwipe.min.js',
         config.libsDir +  '/parallaxslider/parallaxslider.js'
@@ -118,6 +119,7 @@ gulp.task('setLibraries', function(callback){
         config.bowerDir + '/normalize-css/normalize.css',
         config.bowerDir + '/custom-bootstrap/style.css',
         config.bowerDir + '/font-awesome/css/font-awesome.css',
+        config.bowerDir + '/animate.css/animate.css',
         'app/style/sprite.css'
     ]).pipe(concat('libs.min.css'))
         .pipe(cssnano())

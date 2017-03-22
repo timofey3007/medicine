@@ -1,0 +1,101 @@
+.spec_row {
+    margin-right: -115px;
+    margin-left: -115px;
+}
+.m_t_15 {
+    margin-top: 15px !important;
+}
+.m_t_30 {
+    margin-top: 30px !important;
+}
+.m_t_45 {
+    margin-top: 45px !important;
+}
+.m_b_15 {
+    margin-bottom: 15px !important;
+}
+.m_b_30 {
+    margin-bottom: 30px !important;
+}
+
+.m_r_15 {
+    margin-right: 15px !important;
+}
+
+.m_l_30 {
+    margin-left: 30px !important;
+}
+.m_l_45 {
+    margin-left: 45px !important;
+}
+
+.p_t_15 {
+    padding-top: 15px !important;
+}
+.p_t_30 {
+    padding-top: 30px !important;
+}
+.p_b_30 {
+    padding-bottom: 15px !important;
+}
+.p_b_30 {
+    padding-bottom: 30px !important;
+}
+
+.lg_f {
+    font-size: $lgFont !important;
+}
+.big_f{
+    font-size: $bigFont !important;
+}
+.md_f {
+    font-size: $mdFont !important;
+}
+.sm_f {
+    font-size: $smFont !important;
+}
+
+.pos_under {
+    position: relative;
+    z-index: 100;
+}
+.m_icon {
+    display: inline-block;
+}
+.flex_v_center {
+    display: flex;
+    align-items: center;
+}
+.medicine_title {
+    font-size: $lgFont;
+    color: $textColor;
+}
+.btn_default {
+    display: flex;
+    align-items: center;
+    background-color: $buttonDefaultBgColor;
+    color: $buttonDefaultColor;
+    border-radius: 30px;
+    border: none;
+    padding: 20px 40px;
+
+    transition: 0.4s all;
+}
+
+.btn_default:hover {
+    background-color: $hoverColor;
+    color: $buttonDefaultColor;
+}
+
+.round_icon {
+    background-color: $hoverColor;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.medicine_hr {
+    border: 2px solid #f6f6f7;
+}

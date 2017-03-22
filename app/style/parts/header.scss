@@ -1,0 +1,107 @@
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo_text {
+    color: $textColor;
+    font-weight: 300;
+    font-size: $bigFont;
+}
+
+.bg_logo_grad {
+    position: relative;
+    z-index: 1;
+    background: -webkit-linear-gradient(57deg, #ee6363 17%, #ff8081 83%);
+    background: -moz-linear-gradient(57deg, #ee6363 17%, #ff8081 83%);
+    background: -o-linear-gradient(57deg, #ee6363 17%, #ff8081 83%);
+    background: -ms-linear-gradient(57deg, #ee6363 17%, #ff8081 83%);
+    background: linear-gradient(33deg, #ee6363 17%, #ff8081 83%);
+
+    padding-top: 50px;
+    padding-bottom: 140px;
+}
+
+.bg_logo_grad:before {
+    position: absolute;
+    /*content: '';*/
+
+    transform: translate(0, 0);
+    width: 50%;
+    height: 100%;
+    left: 50%;
+
+    background: -webkit-linear-gradient(-103deg, #ffffff 29%, rgba(255, 255, 255, 0) 71%);
+    background: -moz-linear-gradient(-103deg, #ffffff 29%, rgba(255, 255, 255, 0) 71%);
+    background: -o-linear-gradient(-103deg, #ffffff 29%, rgba(255, 255, 255, 0) 71%);
+    background: -ms-linear-gradient(-103deg, #ffffff 29%, rgba(255, 255, 255, 0) 71%);
+    background: linear-gradient(193deg, #ffffff 29%, rgba(255, 255, 255, 0) 71%);
+}
+
+.top_menu {
+    position: relative;
+    z-index: 100;
+}
+
+.top_menu ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.menu_item {
+    position: relative;
+    display: inline-block;
+    color: $textColor;
+    padding: 4px 32px;
+    transition: 0.4s background-color;
+}
+
+.sub_menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -15px;
+    width: 150px;
+    border: 1px solid;
+    padding: 10px 15px;
+}
+
+.menu_item > a {
+    color: $textColor;
+}
+
+.menu_item > a {
+    text-decoration: none;
+}
+
+.sub_menu .menu_item {
+    display: block;
+}
+
+.menu_item:hover {
+    background-color: $hoverColor;
+}
+
+.main_menu > .menu_item:hover {
+    /*border: 1px solid $textColor;*/
+}
+
+.slide_btn {
+    background-color: rgba(255,255,255,.4);
+    color: $textColor;
+    text-transform: uppercase;
+    border-radius: 15px;
+    padding: 2px 15px 0;
+    font-size: $mdFont;
+}
+
+/*.main_menu > .menu_item:first-child {
+    padding-left: 0;
+}
+.main_menu > .menu_item:last-child {
+    padding-right: 0;
+}*/
+
+.menu_item:hover .sub_menu{
+    display: block;
+}
