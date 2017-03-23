@@ -31,9 +31,16 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   height: 26px;
 }
 
-.icon-check_mark {
+.icon-basket_w {
   background-image: url("../img/sprite.png");
   background-position: -141px -133px;
+  width: 21px;
+  height: 26px;
+}
+
+.icon-check_mark {
+  background-image: url("../img/sprite.png");
+  background-position: -172px -133px;
   width: 23px;
   height: 22px;
 }

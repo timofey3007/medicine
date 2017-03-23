@@ -17,7 +17,9 @@
 .m_b_30 {
     margin-bottom: 30px !important;
 }
-
+.m_r_10 {
+    margin-right: 10px !important;
+}
 .m_r_15 {
     margin-right: 15px !important;
 }
@@ -34,6 +36,9 @@
 }
 .p_t_30 {
     padding-top: 30px !important;
+}
+.p_t_45 {
+    padding-top: 45px !important;
 }
 .p_b_30 {
     padding-bottom: 15px !important;
@@ -73,11 +78,14 @@
 .btn_default {
     display: flex;
     align-items: center;
+    justify-content: center;
     background-color: $buttonDefaultBgColor;
     color: $buttonDefaultColor;
     border-radius: 30px;
     border: none;
-    padding: 20px 40px;
+    padding: 20px 20px;
+    width: 275px;
+    margin: 0 auto;
 
     transition: 0.4s all;
 }
@@ -85,6 +93,37 @@
 .btn_default:hover {
     background-color: $hoverColor;
     color: $buttonDefaultColor;
+    text-decoration: none;
+}
+
+.btn_default.btn_success {
+    color: $textColor;
+    background-color: $buttonSuccessColor;
+}
+.btn_default.btn_success:hover {
+    background-color: $hoverColor;
+}
+.Rounded_Rectangle_3_copy_2 {
+    background-color: rgb(253, 252, 252);
+    position: absolute;
+    left: 1229px;
+    top: 4623px;
+    width: 440px;
+    height: 100px;
+    z-index: 201;
+}
+
+.vertical-align {
+    display: flex;
+    flex-direction: row;
+}
+
+.vertical-align > [class^="col-"],
+.vertical-align > [class*=" col-"] {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Optional, to align inner items
+                              horizontally inside the column */
 }
 
 .round_icon {
@@ -98,4 +137,61 @@
 }
 .medicine_hr {
     border: 2px solid #f6f6f7;
+}
+.by_center {
+    margin: 0 auto;
+}
+.btn-play {
+    position: absolute;
+    z-index: 5;
+    background-color: rgba(255, 255, 255, .9);
+    top: 50%;
+    left: 50%;
+    width: 90px;
+    height: 90px;
+    border: 3px solid $videoButtonColor;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+.btn-play:before {
+    content: '\f0da';
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    color: $videoButtonColor;
+    font-size: 3.1vmax;
+    position: absolute;
+    top: 50%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+}
+.video-block {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.16);
+    min-height: 490px;
+}
+.video-block .vidosiki {
+    position: absolute;
+    z-index: 3;
+}
+.video-img {
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+.video-block.play .video-img,
+.video-block.play .btn-play {
+    display: none;
+}
+.video-block.play.pause .btn-play {
+    display: block;
 }

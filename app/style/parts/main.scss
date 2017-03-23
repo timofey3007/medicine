@@ -1,3 +1,4 @@
+/* ---------------------------------- advantage_block_props --------------------------------------------------------- */
 .advantage_block_props {
     margin-bottom: 150px;
 }
@@ -27,30 +28,48 @@
     margin-bottom: 25px;
 }
 
-/* ----------------  ----------------------------------------- */
+/* ------------------------------------ use_block_props ------------------------------------------------------------- */
 .use_block_props {
     position: relative;
     z-index: 1;
-    background: url('../img/use_block_bg.jpg') no-repeat 0 0;
+    /*background: url('../img/use_block_bg.jpg') no-repeat 0 0;*/
     background-size: cover;
-    /*background-image: -moz-linear-gradient( 57deg, rgb(100,186,247) 0%, rgb(84,221,250) 99%);
-    background-image: -webkit-linear-gradient( 57deg, rgb(100,186,247) 0%, rgb(84,221,250) 99%);
-    background-image: -ms-linear-gradient( 57deg, rgb(100,186,247) 0%, rgb(84,221,250) 99%);*/
+    overflow: hidden;
+    background-image: -moz-linear-gradient( $backgroundGradient );
+    background-image: -webkit-linear-gradient( $backgroundGradient );
+    background-image: -ms-linear-gradient( $backgroundGradient );
+    /*background-image: -moz-linear-gradient( $backgroundGradient);
+    background-image: -webkit-linear-gradient( $backgroundGradient);
+    background-image: -ms-linear-gradient( $backgroundGradient);*/
 }
-/*.use_block_props:before {
+.use_block_props:before,
+.use_block_props:after {
     position: absolute;
-    z-index: 2;
+
     content: '';
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-
-    background-image: -moz-linear-gradient( -45deg, rgb(255,255,255) 0%, rgba(255,255,255,0.99) 1%, rgba(255,255,255,0) 100%);
-    background-image: -webkit-linear-gradient( -45deg, rgb(255,255,255) 0%, rgba(255,255,255,0.99) 1%, rgba(255,255,255,0) 100%);
-    background-image: -ms-linear-gradient( -45deg, rgb(255,255,255) 0%, rgba(255,255,255,0.99) 1%, rgba(255,255,255,0) 100%);
+}
+.use_block_props:before {
+    background-image: -moz-linear-gradient( $backgroundGradientBefore );
+    background-image: -webkit-linear-gradient( $backgroundGradientBefore );
+    background-image: -ms-linear-gradient( $backgroundGradientBefore );
+    opacity: 0.9;
+    z-index: 2;
+}
+.use_block_props:after{
+    background-image: -moz-linear-gradient( $backgroundGradientAfter );
+    background-image: -webkit-linear-gradient( $backgroundGradientAfter );
+    background-image: -ms-linear-gradient( $backgroundGradientAfter );
     opacity: 0.102;
-}*/
+    z-index: 3;
+}
+.use_block_props > div {
+    position: relative;
+    z-index: 5;
+}
 $minUseBlockHeight: 785px;
 .use_block_icons {
     position: relative;
@@ -171,16 +190,179 @@ $useBlockGraphRotate_5: rotate(-277deg);
     top: 0;
 }
 
-/* ----------------  ----------------------------------------- */
+/* ---------------------------------------- medicine_product -------------------------------------------------------- */
 .medicine_product {
     padding-top: 100px;
-    background-color: rgba(206, 210, 213,.1);
+    padding-bottom: 90px;
+    background-color: $backgroundSecond;
 }
 .medicine_product_title {
     color: $textSecondColor;
-    font-size: $bigFont;
+    font-size: $lgFont;
     margin: 0;
 }
 .medicine_product_title > * {
     font-size: $lgFont;
+}
+.product_block {
+    margin-top: 60px;
+}
+.product_img {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    min-height: 450px;
+}
+.product_info {
+    position: relative;
+}
+.product_info:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: $borderColor;
+}
+.product_block > div:first-child .product_info:before {
+    background-color: initial;
+}
+.product_title {
+    text-transform: uppercase;
+    margin: 0 0 5px;
+}
+.product_buttons {
+    margin-top: 90px;
+}
+
+/* ---------------------------------- medicine_transform ------------------------------------------------------------ */
+.medicine_transform {
+    display: flex;
+    padding-bottom: 55px;
+    height: 785px;
+    background-image: -moz-linear-gradient( $backgroundGradient );
+    background-image: -webkit-linear-gradient( $backgroundGradient );
+    background-image: -ms-linear-gradient( $backgroundGradient );
+}
+.medicine_transform_content {
+    margin: auto;
+
+}
+.medicine_transform_title {
+    margin-top: 0;
+    color: $textColor;
+    font-size: $lgFont;
+}
+.medicine_transform_description {
+    color: $textColor;
+    margin-bottom: 40px;
+}
+/* ------------------------------------ medicine_review ------------------------------------------------------------- */
+.medicine_review {
+    padding-top: 125px;
+    padding-bottom: 70px;
+    background-color: $backgroundSecond;
+}
+.medicine_review_person {
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: rgb(248, 148, 142);
+    box-shadow: 0px 0px 43px 0px rgba(0, 0, 0, 0.07);
+}
+.medicine_review_text {
+    padding: 45px 55px;
+    color: $textColor;
+    font-style: italic;
+    line-height: 2vmax;
+}
+.medicine_review_text .dg_text {
+    line-height: 2.2vmax;
+    font-size: 1.4vmax;
+}
+.review_author {
+
+}
+.medicine_review_description {
+    padding: 0 55px;
+}
+.medicine_review_description_title {
+    font-size: 2.2vmax;
+    line-height: 3.2vmax;
+    margin: 0 0 25px;
+}
+.medicine_review_description_text {
+    line-height: 2vmax;
+    margin-bottom: 75px;
+}
+/* ------------------------------------ medicine_review ------------------------------------------------------------- */
+.medicine_subscribe {
+    padding-top: 70px;
+    padding-bottom: 115px;
+    background-color: $backgroundSecond;
+}
+.medicine_subscribe_types {
+    margin-top: 95px;
+}
+.medicine_subscribe_block {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-radius: 6px;
+    background-color: #fcfefe;
+    box-shadow: 0px 0px 56px 0px rgba(49, 50, 71, 0.04);
+}
+.medicine_subscribe_block_title {
+    font-size: $bigFont;
+}
+.medicine_subscribe_block_price {
+    display: block;
+    font-size: $lgFont;
+    padding: 30px 0;
+    border-radius: 4px;
+    background-color: $blockDefaultColor;
+    box-shadow: 0px 0px 56px 0px rgba(49, 50, 71, 0.04);
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.medicine_subscribe_capability {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.medicine_subscribe_capability li {
+    margin-bottom: 26px;
+}
+/* ------------------------------------- medicine_facts ------------------------------------------------------------- */
+.medicine_facts {
+    padding-top: 120px;
+    padding-bottom: 100px;
+    position: relative;
+    z-index: 1;
+    background-color: #f07474;
+    overflow: hidden;
+}
+.medicine_facts:before {
+    position: absolute;
+    content: '';
+
+    background-image: -moz-linear-gradient( 90deg, rgb(255,255,255) 0%, rgba(255,255,255,0) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(255,255,255) 0%, rgba(255,255,255,0) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(255,255,255) 0%, rgba(255,255,255,0) 100%);
+    opacity: 0.102;
+
+    left: 196px;
+    top: 6108px;
+    width: 2158px;
+    height: 1603px;
+    z-index: 2;
+}
+.medicine_facts > .container {
+    position: relative;
+    z-index: 5;
+}
+.medicine_facts_title {
+    font-size: $lgFont;
+    color: $textColor;
+    margin-top: 0;
+    margin-bottom: 55px;
 }

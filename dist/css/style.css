@@ -30,6 +30,9 @@ a:hover {
 .m_b_30 {
   margin-bottom: 30px !important; }
 
+.m_r_10 {
+  margin-right: 10px !important; }
+
 .m_r_15 {
   margin-right: 15px !important; }
 
@@ -44,6 +47,9 @@ a:hover {
 
 .p_t_30 {
   padding-top: 30px !important; }
+
+.p_t_45 {
+  padding-top: 45px !important; }
 
 .p_b_30 {
   padding-bottom: 15px !important; }
@@ -89,17 +95,62 @@ a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: #fff;
   color: #010000;
   border-radius: 30px;
   border: none;
-  padding: 20px 40px;
+  padding: 20px 20px;
+  width: 275px;
+  margin: 0 auto;
   -webkit-transition: 0.4s all;
   transition: 0.4s all; }
 
 .btn_default:hover {
   background-color: #a1d1d9;
-  color: #010000; }
+  color: #010000;
+  text-decoration: none; }
+
+.btn_default.btn_success {
+  color: #fff;
+  background-color: #66dcae; }
+
+.btn_default.btn_success:hover {
+  background-color: #a1d1d9; }
+
+.Rounded_Rectangle_3_copy_2 {
+  background-color: #fdfcfc;
+  position: absolute;
+  left: 1229px;
+  top: 4623px;
+  width: 440px;
+  height: 100px;
+  z-index: 201; }
+
+.vertical-align {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row; }
+
+.vertical-align > [class^="col-"],
+.vertical-align > [class*=" col-"] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* Optional, to align inner items
+                              horizontally inside the column */ }
 
 .round_icon {
   background-color: #a1d1d9;
@@ -118,6 +169,65 @@ a:hover {
 
 .medicine_hr {
   border: 2px solid #f6f6f7; }
+
+.by_center {
+  margin: 0 auto; }
+
+.btn-play {
+  position: absolute;
+  z-index: 5;
+  background-color: rgba(255, 255, 255, 0.9);
+  top: 50%;
+  left: 50%;
+  width: 90px;
+  height: 90px;
+  border: 3px solid #66dcae;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  cursor: pointer; }
+
+.btn-play:before {
+  content: '\f0da';
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  color: #66dcae;
+  font-size: 3.1vmax;
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+
+.video-block {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.16);
+  min-height: 490px; }
+
+.video-block .vidosiki {
+  position: absolute;
+  z-index: 3; }
+
+.video-img {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 0; }
+
+.video-block.play .video-img,
+.video-block.play .btn-play {
+  display: none; }
+
+.video-block.play.pause .btn-play {
+  display: block; }
 
 /* --- parallax slider --- */
 #myparallaxslider {
@@ -360,6 +470,7 @@ div.parallaxslider .slider_navigator li:hover {
   display: block; }
 
 /* --- main styles --- */
+/* ---------------------------------- advantage_block_props --------------------------------------------------------- */
 .advantage_block_props {
   margin-bottom: 150px; }
 
@@ -388,30 +499,44 @@ div.parallaxslider .slider_navigator li:hover {
 .advantage_text {
   margin-bottom: 25px; }
 
-/* ----------------  ----------------------------------------- */
+/* ------------------------------------ use_block_props ------------------------------------------------------------- */
 .use_block_props {
   position: relative;
   z-index: 1;
-  background: url("../img/use_block_bg.jpg") no-repeat 0 0;
+  /*background: url('../img/use_block_bg.jpg') no-repeat 0 0;*/
   background-size: cover;
-  /*background-image: -moz-linear-gradient( 57deg, rgb(100,186,247) 0%, rgb(84,221,250) 99%);
-    background-image: -webkit-linear-gradient( 57deg, rgb(100,186,247) 0%, rgb(84,221,250) 99%);
-    background-image: -ms-linear-gradient( 57deg, rgb(100,186,247) 0%, rgb(84,221,250) 99%);*/ }
+  overflow: hidden;
+  background-image: -webkit-linear-gradient(57deg, #f6a5e4 0%, #fbb6ac 99%);
+  background-image: -ms-linear-gradient(57deg, #f6a5e4 0%, #fbb6ac 99%);
+  /*background-image: -moz-linear-gradient( $backgroundGradient);
+    background-image: -webkit-linear-gradient( $backgroundGradient);
+    background-image: -ms-linear-gradient( $backgroundGradient);*/ }
 
-/*.use_block_props:before {
-    position: absolute;
-    z-index: 2;
-    content: '';
-    top:0;
-    left:0;
-    width: 100%;
-    height: 100%;
+.use_block_props:before,
+.use_block_props:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
 
-    background-image: -moz-linear-gradient( -45deg, rgb(255,255,255) 0%, rgba(255,255,255,0.99) 1%, rgba(255,255,255,0) 100%);
-    background-image: -webkit-linear-gradient( -45deg, rgb(255,255,255) 0%, rgba(255,255,255,0.99) 1%, rgba(255,255,255,0) 100%);
-    background-image: -ms-linear-gradient( -45deg, rgb(255,255,255) 0%, rgba(255,255,255,0.99) 1%, rgba(255,255,255,0) 100%);
-    opacity: 0.102;
-}*/
+.use_block_props:before {
+  background-image: -webkit-linear-gradient(57deg, #a6ccdb 0%, #9ddfdc 99%);
+  background-image: -ms-linear-gradient(57deg, #a6ccdb 0%, #9ddfdc 99%);
+  opacity: 0.9;
+  z-index: 2; }
+
+.use_block_props:after {
+  background-image: -webkit-linear-gradient(-45deg, white 0%, rgba(255, 255, 255, 0.99) 1%, rgba(255, 255, 255, 0) 100%);
+  background-image: -ms-linear-gradient(-45deg, white 0%, rgba(255, 255, 255, 0.99) 1%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0.102;
+  z-index: 3; }
+
+.use_block_props > div {
+  position: relative;
+  z-index: 5; }
+
 .use_block_icons {
   position: relative;
   min-height: 785px; }
@@ -554,18 +679,180 @@ div.parallaxslider .slider_navigator li:hover {
   left: -40px;
   top: 0; }
 
-/* ----------------  ----------------------------------------- */
+/* ---------------------------------------- medicine_product -------------------------------------------------------- */
 .medicine_product {
   padding-top: 100px;
+  padding-bottom: 90px;
   background-color: rgba(206, 210, 213, 0.1); }
 
 .medicine_product_title {
   color: #000;
-  font-size: 1.65vmax;
+  font-size: 2.7vmax;
   margin: 0; }
 
 .medicine_product_title > * {
   font-size: 2.7vmax; }
+
+.product_block {
+  margin-top: 60px; }
+
+.product_img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 450px; }
+
+.product_info {
+  position: relative; }
+
+.product_info:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #ced2d5; }
+
+.product_block > div:first-child .product_info:before {
+  background-color: initial; }
+
+.product_title {
+  text-transform: uppercase;
+  margin: 0 0 5px; }
+
+.product_buttons {
+  margin-top: 90px; }
+
+/* ---------------------------------- medicine_transform ------------------------------------------------------------ */
+.medicine_transform {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 55px;
+  height: 785px;
+  background-image: -webkit-linear-gradient(57deg, #f6a5e4 0%, #fbb6ac 99%);
+  background-image: -ms-linear-gradient(57deg, #f6a5e4 0%, #fbb6ac 99%); }
+
+.medicine_transform_content {
+  margin: auto; }
+
+.medicine_transform_title {
+  margin-top: 0;
+  color: #fff;
+  font-size: 2.7vmax; }
+
+.medicine_transform_description {
+  color: #fff;
+  margin-bottom: 40px; }
+
+/* ------------------------------------ medicine_review ------------------------------------------------------------- */
+.medicine_review {
+  padding-top: 125px;
+  padding-bottom: 70px;
+  background-color: rgba(206, 210, 213, 0.1); }
+
+.medicine_review_person {
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f8948e;
+  box-shadow: 0px 0px 43px 0px rgba(0, 0, 0, 0.07); }
+
+.medicine_review_text {
+  padding: 45px 55px;
+  color: #fff;
+  font-style: italic;
+  line-height: 2vmax; }
+
+.medicine_review_text .dg_text {
+  line-height: 2.2vmax;
+  font-size: 1.4vmax; }
+
+.medicine_review_description {
+  padding: 0 55px; }
+
+.medicine_review_description_title {
+  font-size: 2.2vmax;
+  line-height: 3.2vmax;
+  margin: 0 0 25px; }
+
+.medicine_review_description_text {
+  line-height: 2vmax;
+  margin-bottom: 75px; }
+
+/* ------------------------------------ medicine_review ------------------------------------------------------------- */
+.medicine_subscribe {
+  padding-top: 70px;
+  padding-bottom: 115px;
+  background-color: rgba(206, 210, 213, 0.1); }
+
+.medicine_subscribe_types {
+  margin-top: 95px; }
+
+.medicine_subscribe_block {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-radius: 6px;
+  background-color: #fcfefe;
+  box-shadow: 0px 0px 56px 0px rgba(49, 50, 71, 0.04); }
+
+.medicine_subscribe_block_title {
+  font-size: 1.65vmax; }
+
+.medicine_subscribe_block_price {
+  display: block;
+  font-size: 2.7vmax;
+  padding: 30px 0;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0px 0px 56px 0px rgba(49, 50, 71, 0.04);
+  margin-top: 30px;
+  margin-bottom: 30px; }
+
+.medicine_subscribe_capability {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.medicine_subscribe_capability li {
+  margin-bottom: 26px; }
+
+/* ------------------------------------- medicine_facts ------------------------------------------------------------- */
+.medicine_facts {
+  padding-top: 120px;
+  padding-bottom: 100px;
+  position: relative;
+  z-index: 1;
+  background-color: #f07474;
+  overflow: hidden; }
+
+.medicine_facts:before {
+  position: absolute;
+  content: '';
+  background-image: -webkit-linear-gradient(90deg, white 0%, rgba(255, 255, 255, 0) 100%);
+  background-image: -ms-linear-gradient(90deg, white 0%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0.102;
+  left: 196px;
+  top: 6108px;
+  width: 2158px;
+  height: 1603px;
+  z-index: 2; }
+
+.medicine_facts > .container {
+  position: relative;
+  z-index: 5; }
+
+.medicine_facts_title {
+  font-size: 2.7vmax;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 55px; }
 
 /* --- animation --- */
 @-webkit-keyframes rotating /* Safari and Chrome */ {
