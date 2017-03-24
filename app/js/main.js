@@ -88,6 +88,25 @@ $(document).ready(() => {
         },
         submitHandler: function(form){
             // put here code for success validation
+            form.reset();
+            alert("Все чики-бомбони");
+            return false;
+        }
+    });
+
+    $("#medicine_subscribe").validate({
+        rules: {
+            'form[email]': {
+                required: true,
+                email: true
+            }
+        },
+        errorPlacement: function(error, element) {
+
+        },
+        submitHandler: function(form){
+            // put here code for success validation
+            form.reset();
             alert("Все чики-бомбони");
             return false;
         }

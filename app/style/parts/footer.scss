@@ -1,0 +1,87 @@
+.medicine_footer {
+    background-color: $footerColor;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+.medicine_footer_menu .medicine_footer_menu_item {
+    color: $textSecondColor;
+    font-size: $mdFont;
+    padding: 5px 20px;
+
+    transition: 0.4s all;
+}
+.medicine_footer_menu .medicine_footer_menu_item:hover {
+    background-color: $hoverColor;
+    color: $textColor;
+}
+.medicine_footer_form {
+    display: flex;
+    margin-top: 30px;
+    justify-content: flex-start;
+}
+.medicine_footer_form_input {
+    padding: 20px 30px;
+    background-color: $backgroundThird;
+    border: none;
+    border-radius: 40px;
+    color: $textSecondColor;
+    width: 450px;
+}
+.medicine_footer .medicine_footer_form_input:focus,
+.medicine_footer .medicine_footer_form_confirm:focus {
+    outline: none;
+}
+.medicine_footer_form_input.error {
+    color: $errorColor;
+    background-color: $backgroundError;
+}
+.medicine_footer_form_input.valid {
+    color: $successColor;
+    background-color: $backgroundSuccess;
+}
+.medicine_footer_block {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+.medicine_footer_form_confirm {
+    width: initial;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.footer_icon {
+    position: relative;
+    cursor: pointer;
+    border-radius: 50%;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-color: $backgroundThird;
+    margin-left: 15px;
+
+    transition: 0.4s all;
+}
+.footer_icon:hover {
+    box-shadow: 0px 0px 6px 1px $buttonColor;
+}
+.footer_icon .fa {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: $bigFont;
+}
+.medicine_footer_line {
+    margin-top: 50px;
+}
+.medicine_footer_text {
+    color: $buttonColor;
+}
+.medicine_footer_copyright {
+    color: $textThirdColor;
+}
+.medicine_footer_text {
+    display: block;
+    text-align: right;
+}

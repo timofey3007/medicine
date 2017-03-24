@@ -1,0 +1,19 @@
+@media( max-width: 1700px ) and  (min-width: 1501px) {
+    .spec_row {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+@media ( max-width: 1170px ) {
+    .spec_row {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+@media ( max-width: 720px ) {
+    .logo {
+        margin-bottom: 15px;
+    }
+}
