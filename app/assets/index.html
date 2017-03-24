@@ -351,26 +351,122 @@
         </section>
         <!-- end medicine subscribe -->
 
-        <!-- medicine facts -->
-        <section class="medicine_facts">
-            <div class="container">
-                <h3 class="medicine_facts_title text-center">Did you know this facts about Food?</h3>
+        <div class="overflow_hidden">
+            <!-- medicine facts -->
+            <section class="medicine_facts">
+                <div class="container">
+                    <h3 class="medicine_facts_title text-center">Did you know this facts about Food?</h3>
 
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="video-block flex-container">
-                        <div class="vidosiki" data-video-id="yJWp7SHp2AQ"></div>
-                        <div class="video-img" style="background-image: url('img/video_frame.jpg');"></div>
-                        <span class="btn-play"></span>
+                    <div class="col-md-8 col-md-offset-2 m_b_30">
+                        <div class="video-block flex-container">
+                            <div class="vidosiki" data-video-id="yJWp7SHp2AQ"></div>
+                            <div class="video-img" style="background-image: url('img/video_frame.jpg');"></div>
+                            <span class="btn-play"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="row">
+                            <div class="row medicine_facts_outer">
+                                <div class="medicine_facts_outer_blocknum">
+                                    <span class="medicine_facts_outer_blocknum_number">12817</span>
+                                    <span class="medicine_facts_outer_blocknum_text">Of lorem ipsum!</span>
+                                </div>
+
+                                <div class="medicine_facts_outer_blocknum">
+                                    <span class="medicine_facts_outer_blocknum_number">44+</span>
+                                    <span class="medicine_facts_outer_blocknum_text">Of lorem simple ipsum!</span>
+                                </div>
+
+                                <div class="medicine_facts_outer_blocknum">
+                                    <span class="medicine_facts_outer_blocknum_number">12817</span>
+                                    <span class="medicine_facts_outer_blocknum_text">Of lorem ipsum!</span>
+                                </div>
+
+                                <div class="medicine_facts_outer_blocknum">
+                                    <span class="medicine_facts_outer_blocknum_number">44+</span>
+                                    <span class="medicine_facts_outer_blocknum_text">Of lorem simple ipsum!</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </section>
+            <!-- end medicine facts -->
 
+
+            <!-- medicine form -->
+            <section class="medicine_form text-center">
+                <form class="form medicine_form_form" name="medicine" method="post" action="" id="medicine_form">
+                    <h4 class="medicine_form_from_title">Contact Us</h4>
+
+                    <div class="medicine_form_group">
+                        <label for="formName" class="fly_label">Name</label>
+                        <input class="medicine_form_group_input" type="text" name="form[name]" id="formName">
+                    </div>
+                    <div class="medicine_form_group">
+                        <label for="formEmail" class="fly_label">Email address</label>
+                        <input class="medicine_form_group_input" type="email" name="form[email]" id="formEmail">
+                    </div>
+                    <div class="medicine_form_group">
+                        <label for="formMessage">Message</label>
+                        <textarea class="medicine_form_group_input" name="form[message]" id="formMessage" placeholder="Write your message here ..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn_default text-uppercase btn_success">Send message</button>
+                </form>
+            </section>
+            <!-- end medicine form -->
+        </div>
+
+        <!-- medicine slide review -->
+        <section class="medicine_slide_review">
+            <div class="container">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="flexslider">
+                        <ul class="slides">
+                            <li>
+                                <div class="row">
+                                    <div class="col-md-8 col-md-offset-1">
+                                        <p class="medicine_slide_review_description">" Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's of type and scrambled. It to make a type specimen book."</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="medicine_slide_review_person">
+                                            <img class="img-responsive" src="img/melissa.png" alt="Melissa, Traveler"/>
+                                            <span>Melissa, Traveler</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row">
+                                    <div class="col-md-8 col-md-offset-1">
+                                        <p class="medicine_slide_review_description">" Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's of type and scrambled. It to make a type specimen book."</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="medicine_slide_review_person">
+                                            <img class="img-responsive" src="img/melissa.png" alt="Melissa, Traveler"/>
+                                            <span>Melissa, Traveler</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
-        <!-- end medicine facts -->
+        <!-- end medicine slide review -->
     </main>
-    <!--end main -->
+    <!-- end main -->
 
-    <!-- libs.min.js including jquery(v3), bootstrap.js (v3), parallax.js, wow.js, jquery.velocity.min.js,
+    <!-- footer -->
+    <footer>
+
+    </footer>
+    <!--end footer -->
+
+    <!-- libs.min.js including jquery(v3), bootstrap.js (v3), parallax.js, wow.js, jquery.validate.min.js, jquery.velocity.min.js,
         jquery.touchSwipe.min.js, parallaxslider.js -->
     <script src="js/libs.min.js"></script>
     <script src="js/main.js"></script>

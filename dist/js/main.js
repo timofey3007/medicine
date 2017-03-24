@@ -1,5 +1,12 @@
 "use strict";
 
+window.langProp = {
+    ru: {
+        emptyInput: "поле не может быть пустым",
+        invalidEmail: "email введен некорректно"
+    }
+};
+
 $(document).ready(() => {
     var mainParallaxSlider = new parallaxSlider({
             wrapperid: 'myparallaxslider', //ID of DIV on page to house slider
@@ -25,6 +32,70 @@ $(document).ready(() => {
     // init parallax effects
     $('#parallax_medicine_transform').parallax({
         limitY: 35
+    });
+
+    $(".medicine_facts_outer").animateCounter({
+        selector: ".medicine_facts_outer_blocknum_number",
+        duration: 1500
+    });
+
+    // ---- set/unset class for from input -----------------------------------------------------------------------------
+    $(".medicine_form_group_input").on("focus", function(){
+        var el = $(this);
+
+        el.parent().addClass("focusing");
+    });
+
+    $(".medicine_form_group_input").on("blur", function(){
+        var el = $(this);
+
+        if ( !el.val() ) {
+            el.parent().removeClass("focusing");
+        }
+    });
+    // -----------------------------------------------------------------------------------------------------------------
+
+    $("#medicine_form").validate({
+        rules: {
+            'form[name]': {
+                required: true
+            },
+            'form[email]': {
+                required: true,
+                email: true
+            },
+            'form[message]': {
+                required: true
+            }
+        },
+        messages: {
+            'form[name]': {
+                required: langProp.ru.emptyInput
+            },
+            'form[email]': {
+                required: langProp.ru.emptyInput,
+                email: langProp.ru.invalidEmail
+            },
+            'form[message]': {
+                required: langProp.ru.emptyInput
+            }
+        },
+        highlight: function(element, errorClass, validClass) {
+            $(element).parent().addClass(errorClass).removeClass(validClass);
+        },
+        unhighlight: function(element, errorClass, validClass) {
+            $(element).parent().removeClass(errorClass).addClass(validClass);
+        },
+        submitHandler: function(form){
+            // put here code for success validation
+            alert("Все чики-бомбони");
+            return false;
+        }
+    });
+
+    $('.flexslider').flexslider({
+        animation: "slide",
+        controlNav: false
     });
 });
 
@@ -91,4 +162,60 @@ $.fn.youTubeLoader = function(options) {
             player.playVideo();
         }
     };
+};
+
+/**
+ * plugin for animate numbers
+ * @param options
+ */
+$.fn.animateCounter = function(options){
+    var settings = $.extend({
+            selector: ".counter",
+            offset: 0,
+            duration: 2000,
+            easing: 'swing'
+            // didn't decide what to write
+        }, options),
+        _this = $(this),
+        elems = _this.find(settings.selector),
+        countElems = [],
+        win = $(window);
+
+    if ( elems.length > 0 ) {
+        let count = 0;
+        elems.each(function(){
+            countElems[count++] = false;
+        });
+
+        win.on("scroll", () => {
+            var pos = $(window).scrollTop(),
+                winHeight = win.height();
+
+            count = 0;
+            elems.each( function() {
+                let el = $(this),
+                    index = count++;
+
+                if ( !countElems[index] && ( el.offset().top - el.innerHeight() - settings.offset < pos + winHeight ) ) {
+                    countElems[index] = true;
+
+                    el.prop('Counter',0).animate({
+                        Counter: getNumber(el.text())
+                    }, {
+                        duration: settings.duration,
+                        easing: settings.easing,
+                        step: function (now) {
+                            el.text( el.text().replace(getNumber(el.text()), Math.ceil(now)));
+                        }
+                    });
+                }
+            });
+
+            function getNumber(str) {
+                let pattern = /\d+/;
+
+                return str.match(pattern)[0];
+            }
+        });
+    }
 };
