@@ -10,12 +10,12 @@
 
 .bg_logo_grad {
     position: relative;
-    z-index: 1;
-    background: -webkit-linear-gradient(57deg, #ee6363 17%, #ff8081 83%);
-    background: -moz-linear-gradient(57deg, #ee6363 17%, #ff8081 83%);
-    background: -o-linear-gradient(57deg, #ee6363 17%, #ff8081 83%);
-    background: -ms-linear-gradient(57deg, #ee6363 17%, #ff8081 83%);
-    background: linear-gradient(33deg, #ee6363 17%, #ff8081 83%);
+    z-index: 5;
+    background: -webkit-linear-gradient($backgroundTopColot);
+    background: -moz-linear-gradient($backgroundTopColot);
+    background: -o-linear-gradient($backgroundTopColot);
+    background: -ms-linear-gradient($backgroundTopColot);
+    background: linear-gradient($backgroundTopColot);
 
     padding-top: 50px;
     padding-bottom: 140px;
@@ -85,6 +85,22 @@
 
 .main_menu > .menu_item:hover {
     /*border: 1px solid $textColor;*/
+}
+#top_control_menu {
+    transition: 0.4s background-color, 0.4s box-shadow, 0.4s padding-top, 0.4s padding-bottom;
+}
+#top_control_menu.scroll-to-fixed-fixed {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: -webkit-linear-gradient($backgroundTopColot);
+    background: -moz-linear-gradient($backgroundTopColot);
+    background: -o-linear-gradient($backgroundTopColot);
+    background: -ms-linear-gradient($backgroundTopColot);
+    background: linear-gradient($backgroundTopColot);
+
+    -webkit-box-shadow: 0px 5px 10px 0px rgba(255,255,255,1);
+    -moz-box-shadow: 0px 5px 10px 0px rgba(255,255,255,1);
+    box-shadow: 0px 5px 10px 0px rgba(255,255,255,1);
 }
 
 .slide_btn {

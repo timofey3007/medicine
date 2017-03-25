@@ -109,6 +109,7 @@ gulp.task('setLibraries', function(callback){
         config.bowerDir +  '/bootstrap/dist/js/bootstrap.min.js',
         config.bowerDir +  '/wow/dist/wow.min.js',
         config.bowerDir +  '/jquery-validation/dist/jquery.validate.min.js',
+        config.bowerDir +  '/ScrollToFixed/jquery-scrolltofixed-min.js',
         config.libsDir +  '/parallax/deploy/jquery.parallax.min.js',
         config.libsDir +  '/parallaxslider/jquery.velocity.min.js',
         config.libsDir +  '/parallaxslider/jquery.touchSwipe.min.js',

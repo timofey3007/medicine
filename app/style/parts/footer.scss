@@ -1,12 +1,12 @@
 .medicine_footer {
     background-color: $footerColor;
-    padding-top: 40px;
-    padding-bottom: 30px;
+    padding-top: 85px;
+    padding-bottom: 40px;
 }
 .medicine_footer_menu .medicine_footer_menu_item {
     color: $textSecondColor;
     font-size: $mdFont;
-    padding: 5px 20px;
+    padding: 5px 25px;
 
     transition: 0.4s all;
 }
@@ -16,7 +16,7 @@
 }
 .medicine_footer_form {
     display: flex;
-    margin-top: 30px;
+    margin-top: 50px;
     justify-content: flex-start;
 }
 .medicine_footer_form_input {
@@ -71,9 +71,10 @@
     left: 50%;
     transform: translate(-50%,-50%);
     font-size: $bigFont;
+    color: $socColor;
 }
 .medicine_footer_line {
-    margin-top: 50px;
+    margin-top: 135px;
 }
 .medicine_footer_text {
     color: $buttonColor;

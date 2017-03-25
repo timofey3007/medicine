@@ -16,7 +16,12 @@
   ],
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "animate.css": "^3.5.2",
     "install": "^1.0.4",
-    "normalize-css": "^5.0.0"
+    "normalize-css": "^5.0.0",
+    "jquery-validation": "^1.16.0",
+    "ScrollToFixed": "^1.0.8",
+    "wow": "^1.1.2",
   }
 }

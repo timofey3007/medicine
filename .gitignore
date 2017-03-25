@@ -1,5 +1,7 @@
-.idea
-node_modules
-bower_components
-app/tmp
+/.idea
+/node_modules
+/bower_components/*
+/app/tmp
+/.gulp-scss-cache
 
+!bower_components/custom-bootstrap/*

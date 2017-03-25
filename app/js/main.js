@@ -112,6 +112,24 @@ $(document).ready(() => {
         }
     });
 
+    // -----------------------------------------------------------------------------------------------------------------
+
+    $('#top_control_menu').scrollToFixed({
+        marginTop: 0,
+        limit: function() {
+            var limit = $('.medicine_footer').offset().top - $('#top_control_menu').outerHeight(true) - 10;
+
+            return limit;
+        },
+        zIndex: 999,
+        /*preFixed: function() { $(this).find('.title').css('color', 'blue'); },
+        preAbsolute: function() { $(this).find('.title').css('color', 'red'); },
+        postFixed: function() { $(this).find('.title').css('color', ''); },
+        postAbsolute: function() { $(this).find('.title').css('color', ''); }*/
+        preFixed: function() { $(this).parent().before($(this)); },
+        postFixed: function() { $(this).next('header').prepend($(this)); }
+    });
+
     $('.flexslider').flexslider({
         animation: "slide",
         controlNav: false
