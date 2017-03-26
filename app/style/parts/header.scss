@@ -1,3 +1,7 @@
+.top_control_menu_block {
+
+}
+
 .logo {
     display: flex;
     align-items: center;
@@ -19,6 +23,10 @@
 
     padding-top: 50px;
     padding-bottom: 140px;
+}
+
+.top_control_menu_button .icon-bar {
+    background-color: $textColor;
 }
 
 .bg_logo_grad:before {
@@ -121,4 +129,7 @@
 
 .menu_item:hover .sub_menu{
     display: block;
+}
+.navbar-toggle {
+    margin: 0;
 }

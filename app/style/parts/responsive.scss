@@ -12,8 +12,40 @@
     }
 }
 
-@media ( max-width: 720px ) {
-    .logo {
+@media ( max-width: 767px ) {
+    .bg_logo_grad {
+        padding-top: 20px;
+    }
+    .top_control_menu_block {
         margin-bottom: 15px;
+    }
+    .top_menu {
+        border-bottom: 1px solid $textColor;
+    }
+    $pt: 10px;
+    $pw: 15px;
+    .menu_item {
+        display: block;
+        padding: $pt 15px;
+        text-align: left;
+    }
+    .menu_item a {
+
+    }
+    .top_menu .sub_menu {
+        position: static;
+        display: block;
+        border: none;
+        margin: $pt -#{$pw} -#{$pt};
+        width: calc(100% + #{2*$pw});
+        height: 0;
+
+        transition: 0.4s height;
+    }
+    .sub_menu .menu_item {
+        padding-left: 30px;
+    }
+    .menu_item:hover .sub_menu {
+        height: auto;
     }
 }

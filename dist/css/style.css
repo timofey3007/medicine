@@ -403,6 +403,9 @@ div.parallaxslider .slider_navigator li:hover {
   padding-top: 50px;
   padding-bottom: 140px; }
 
+.top_control_menu_button .icon-bar {
+  background-color: #fff; }
+
 .bg_logo_grad:before {
   position: absolute;
   /*content: '';*/
@@ -485,6 +488,9 @@ div.parallaxslider .slider_navigator li:hover {
 }*/
 .menu_item:hover .sub_menu {
   display: block; }
+
+.navbar-toggle {
+  margin: 0; }
 
 /* --- main styles --- */
 /* ---------------------------------- advantage_block_props --------------------------------------------------------- */
@@ -1197,6 +1203,27 @@ div.parallaxslider .slider_navigator li:hover {
     margin-right: 0;
     margin-left: 0; } }
 
-@media (max-width: 720px) {
-  .logo {
-    margin-bottom: 15px; } }
+@media (max-width: 767px) {
+  .bg_logo_grad {
+    padding-top: 20px; }
+  .top_control_menu_block {
+    margin-bottom: 15px; }
+  .top_menu {
+    border-bottom: 1px solid #fff; }
+  .menu_item {
+    display: block;
+    padding: 10px 15px;
+    text-align: left; }
+  .top_menu .sub_menu {
+    position: static;
+    display: block;
+    border: none;
+    margin: 10px -15px -10px;
+    width: calc(100% + 30px);
+    height: 0;
+    -webkit-transition: 0.4s height;
+    transition: 0.4s height; }
+  .sub_menu .menu_item {
+    padding-left: 30px; }
+  .menu_item:hover .sub_menu {
+    height: auto; } }
