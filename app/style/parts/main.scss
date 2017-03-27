@@ -32,7 +32,7 @@
 .use_block_props {
     position: relative;
     z-index: 1;
-    /*background: url('../img/use_block_bg.jpg') no-repeat 0 0;*/
+    background: url('../img/use_block_bg.jpg') no-repeat 0 0;
     background-size: cover;
     overflow: hidden;
     background-image: -moz-linear-gradient( $backgroundGradient );
@@ -219,7 +219,7 @@ $useBlockGraphRotate_5: rotate(-277deg);
 .product_info:before {
     content: '';
     position: absolute;
-    left: 0;
+    left: -15px;
     top: 0;
     width: 1px;
     height: 100%;
@@ -235,12 +235,19 @@ $useBlockGraphRotate_5: rotate(-277deg);
 .product_buttons {
     margin-top: 90px;
 }
+.product_buttons {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 300px;
+}
 
 /* ---------------------------------- medicine_transform ------------------------------------------------------------ */
 .medicine_transform {
     display: flex;
     padding-bottom: 55px;
     height: 785px;
+    background: url('../img/transform_block_bg.jpg') no-repeat 0 0;
+    background-size: cover;
     background-image: -moz-linear-gradient( $backgroundGradient );
     background-image: -webkit-linear-gradient( $backgroundGradient );
     background-image: -ms-linear-gradient( $backgroundGradient );
@@ -300,6 +307,11 @@ $useBlockGraphRotate_5: rotate(-277deg);
     padding-top: 70px;
     padding-bottom: 115px;
     background-color: $backgroundSecond;
+}
+.medicine_subscribe_block .btn_default {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 300px;
 }
 .medicine_subscribe_types {
     margin-top: 95px;

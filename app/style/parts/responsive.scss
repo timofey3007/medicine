@@ -1,7 +1,25 @@
-@media( max-width: 1700px ) and  (min-width: 1501px) {
+@media( max-width: 1700px ) and  (min-width: 1571px) {
     .spec_row {
         margin-right: 0;
         margin-left: 0;
+    }
+}
+@media ( max-width: 1570px ) {
+    .spec_row {
+        margin-right: -60px;
+        margin-left: -60px;
+    }
+    div.parallaxslider .navbutton {
+        font-size: 32px;
+    }
+}
+
+@media( max-width: 1560px ) and  (min-width: 992px) {
+    .use_block_icons {
+        margin-left: 110px;
+    }
+    .use_block_description {
+        align-items: flex-end;
     }
 }
 
@@ -10,9 +28,193 @@
         margin-right: 0;
         margin-left: 0;
     }
+    .medicine_subscribe_block .btn_default {
+        max-width: 250px;
+        min-width: initial;
+    }
+    .medicine_form_form {
+        width: 50%;
+    }
+    .video-block {
+        height: 390px;
+    }
+    .medicine_subscribe_types > div {
+        margin-bottom: 30px;
+    }
+}
+
+@media ( max-width: 991px ) {
+    * {
+        font-size: 12px;
+    }
+    .bg_logo_grad {
+        padding-top: 30px;
+    }
+    .menu_item {
+        padding: 4px 20px;;
+    }
+    #myparallaxslider {
+        height: 400px;
+    }
+    .btn_default {
+        padding: 15px 20px;
+        min-width: 200px;
+    }
+    .parallaxslider .flex_v_center {
+        flex-direction: column;
+    }
+    .slide_btn {
+        font-size: $sm-mdFont;
+    }
+    div.parallaxslider .slider_block_text {
+        font-size: $sm-mdFont;
+        line-height: 16px;
+    }
+    .parallaxslider .site_link {
+        margin-top: 15px;
+        font-size: $sm-mdFont;
+    }
+    .parallaxslider .site_link.m_l_45  {
+        margin-left: 0 !important;
+    }
+    .advantage_block_props {
+        margin-bottom: 60px;
+    }
+    .advantage_props {
+        padding: 40px 45px;
+    }
+    .round_icon {
+        margin: auto;
+    }
+    .advantage_title {
+        text-align: center;
+    }
+    .medicine_product {
+        padding-top: 60px;
+        padding-bottom: 50px;
+    }
+    .product_img {
+        min-height: 440px;
+    }
+    .product_buttons {
+        margin-top: 70px;
+    }
+    .footer_icon .fa {
+        font-size: 18px;
+    }
+    .medicine_footer_menu .medicine_footer_menu_item {
+        font-size: $sm-mdFont;
+    }
+    .medicine_footer {
+        padding-top: 40px;
+    }
+    .medicine_footer_line {
+        margin-top: 60px;
+    }
+    .medicine_review_text .dg_text {
+        line-height: 16px;
+        font-size: 14px;
+    }
+    .medicine_review_description {
+        padding: 0;
+    }
+    .medicine_review_description_title {
+        font-size: $sm-bigFont;
+        line-height: 20px;
+        margin-bottom: 15px;
+    }
+    .medicine_review_description_text {
+        font-size: $sm-mdFont;
+        line-height: 16px;
+        text-align: justify;
+        margin-bottom: 0;
+    }
+    .medicine_subscribe {
+        padding-top: 45px;
+        padding-bottom: 50px;
+    }
+    .medicine_subscribe_types {
+        margin-top: 45px;
+    }
+    .medicine_facts {
+        padding-top: 50px;
+    }
+    .btn-play {
+        width: 75px;
+        height: 75px;
+    }
+    .btn-play:before {
+        font-size: 45px;
+        left: 56%;
+    }
+    .video-block {
+        min-height: 300px;
+    }
+    .medicine_facts_outer {
+        margin-top: 70px;
+    }
+    .medicine_facts_outer_blocknum {
+        text-align: center;
+    }
+    .medicine_facts_outer_blocknum:before {
+        width: 100px;
+        height: 100px;
+    }
+    .medicine_form_form {
+        width: 70%;
+    }
+    .medicine_form_group.error label {
+        font-size: $sm-smFont;
+    }
+    .medicine_slide_review_description {
+        font-size: $sm-bigFont;
+    }
+    .medicine_slide_review_person span {
+        font-size: $sm-mdFont;
+    }
+    .product_block > div {
+        margin-bottom: 15px;
+    }
+    .product_block > div:nth-child(odd) .product_info:before {
+        display: none;
+    }
+    .medicine_footer_block {
+        flex-direction: column;
+    }
+    .medicine_footer_block_soc_service {
+        text-align: center;
+        margin-top: 30px;
+    }
+    .medicine_footer_form {
+        text-align: center;
+        margin-top: 30px;
+    }
 }
 
 @media ( max-width: 767px ) {
+    .slider_navigator {
+        display: none;
+    }
+    .product_block > div {
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid $borderColor;
+    }
+    .product_buttons {
+        margin-top: 30px;
+    }
+    .product_info:before {
+        display: none;
+    }
+    #top_control_menu.scroll-to-fixed-fixed {
+        padding-bottom: 0;
+    }
+    .navbutton.fa-chevron-left {
+        left: 10px !important;
+    }
+    .navbutton.fa-chevron-right {
+        right: 10px !important;
+    }
     .bg_logo_grad {
         padding-top: 20px;
     }
@@ -21,6 +223,9 @@
     }
     .top_menu {
         border-bottom: 1px solid $textColor;
+    }
+    .product_img {
+        min-height: 250px;
     }
     $pt: 10px;
     $pw: 15px;
@@ -39,6 +244,7 @@
         margin: $pt -#{$pw} -#{$pt};
         width: calc(100% + #{2*$pw});
         height: 0;
+        opacity: 0;
 
         transition: 0.4s height;
     }
@@ -47,5 +253,123 @@
     }
     .menu_item:hover .sub_menu {
         height: auto;
+        opacity: 1;
+    }
+    .use_block_icons, .use_block_description {
+        min-height: 250px;
+    }
+    .medicine_product_title, .medicine_product_title > * {
+        font-size: $sm-lgFont;
+    }
+    .medicine_footer_menu {
+        text-align: center;
+    }
+    .medicine_footer_block {
+        flex-direction: column;
+    }
+    .medicine_footer_block_soc_service {
+        text-align: center;
+        margin-top: 30px;
+    }
+    .medicine_footer_form {
+        text-align: center;
+        margin-top: 30px;
+        flex-direction: column;
+    }
+    .medicine_footer_form_input {
+        margin: 0 auto 15px;
+        width: 270px;
+    }
+    .medicine_footer_text {
+        margin-top: 15px;
+    }
+    .medicine_transform {
+        height: 450px;
+    }
+    .medicine_transform_content img {
+        max-width: 250px;
+    }
+    .vertical-align {
+        flex-direction: column;
+    }
+    .medicine_review {
+        padding-top: 50px;
+        padding-bottom: 40px;
+    }
+    .medicine_review_person {
+        margin-bottom: 15px;
+    }
+    .medicine_review_text {
+        padding: 25px 35px;
+    }
+    .medicine_subscribe_types > div {
+        margin-bottom: 15px;
+    }
+    .medicine_subscribe_block_title {
+        font-size: $sm-mdFont;
+    }
+    .medicine_subscribe_block_price {
+        font-size: $sm-lgFont;
+        padding: 20px 0 15px;
+        margin: 20px 0;
+    }
+    .medicine_subscribe_capability li {
+        margin-bottom: 15px;
+    }
+    .medicine_facts {
+        padding-top: 30px;
+        padding-bottom: 170px;
+    }
+    .medicine_facts_title {
+        font-size: $sm-bigFont;
+        margin-bottom: 20px;
+    }
+    .video-block {
+        min-height: 200px;
+    }
+    .medicine_facts_outer {
+        flex-wrap: wrap;
+    }
+    .medicine_facts_outer_blocknum {
+        width: 40%;
+        height: 160px;
+    }
+    .medicine_facts_outer_blocknum:before {
+        width: 100px;
+        height: 100px;
+        top: 20%;
+    }
+    .medicine_facts_outer_blocknum:first-child,
+    .medicine_facts_outer_blocknum:last-child {
+        margin: 0 auto;
+    }
+    .medicine_form_form {
+        width: 90%;
+        padding: 30px 30px 20px;
+    }
+    .medicine_form_from_title {
+        font-size: $sm-bigFont;
+    }
+    .medicine_form_group {
+        min-height: 55px;
+    }
+    .flexslider:hover .flex-direction-nav .flex-next {
+        right: 0;
+    }
+    .flexslider:hover .flex-direction-nav .flex-prev {
+        left: 0;
+    }
+    .flex-direction-nav {
+        display: none;
+    }
+}
+
+@media ( max-width: 500px ) {
+    .slide_btn {
+        font-size: 10px;
+        white-space: nowrap;
+    }
+    .flex_v_center .btn_default {
+        margin-left: 110px;
     }
 }

@@ -121,7 +121,7 @@ gulp.task('setLibraries', function(callback){
 
     gulp.src([// забираем css библиотеки, которые будем использовать
         config.bowerDir + '/normalize-css/normalize.css',
-        config.bowerDir + '/custom-bootstrap/style.css',
+        config.libsDir + '/custom-bootstrap/style.css',
         config.bowerDir + '/font-awesome/css/font-awesome.css',
         config.bowerDir + '/animate.css/animate.css',
         config.libsDir + '/flexslider/flexslider.css',
